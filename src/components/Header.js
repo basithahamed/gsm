@@ -6,38 +6,38 @@ function Header() {
     const [BurgerStatus, setBurgerStatus] = useState(false);
     return (
         <>
-        <ServiceNeed></ServiceNeed>
-        <Container>
-            
-            <BurgerLogo>
-                <li>Logo</li>
-            </BurgerLogo>
-            <MenuLeft>
-                <li>Logo</li>
-                <li>Mac</li>
-                <li>iPhone</li>
-                <li>iWatch</li>
-                <li>iPad</li>
-                <li>AirPods</li>
-            </MenuLeft>
-            <MenuRight>
-                <li>Resources</li>
-                <li>Contact Us</li>
-            </MenuRight>
-            <BurgerMenu onClick={() => { setBurgerStatus(true) }}>
-                <li><i class="fa-solid fa-bars"></i></li>
-            </BurgerMenu>
-            <CustomMenu show={BurgerStatus}>
-                <Xbtn onClick={()=>{setBurgerStatus(false)}}>
-                    <i class="fa-solid fa-x"></i>
-                </Xbtn>
-                <li>Mac</li>
-                <li>iPhone</li>
-                <li>iWatch</li>
-                <li>iPad</li>
-                <li>AirPods</li>
-            </CustomMenu>
-        </Container>
+            <ServiceNeed></ServiceNeed>
+            <Container>
+
+                <BurgerLogo>
+                    <li>Logo</li>
+                </BurgerLogo>
+                <MenuLeft>
+                    <li>Logo</li>
+                    <li>Mac</li>
+                    <li>iPhone</li>
+                    <li>iWatch</li>
+                    <li>iPad</li>
+                    <li>AirPods</li>
+                </MenuLeft>
+                <MenuRight>
+                    <li>Resources</li>
+                    <li>Contact Us</li>
+                </MenuRight>
+                <BurgerMenu onClick={() => { setBurgerStatus(true) }}>
+                    <li><i class="fa-solid fa-bars"></i></li>
+                </BurgerMenu>
+                <CustomMenu show={BurgerStatus}>
+                    <Xbtn onClick={() => { setBurgerStatus(false) }}>
+                        <i class="fa-solid fa-x"></i>
+                    </Xbtn>
+                    <li>Mac</li>
+                    <li>iPhone</li>
+                    <li>iWatch</li>
+                    <li>iPad</li>
+                    <li>AirPods</li>
+                </CustomMenu>
+            </Container>
         </>
     )
 }
@@ -116,10 +116,11 @@ const CustomMenu = styled.div`
     right:0;
     background-color: white;
     width:300px;
-    // margin-top:100px;
+    z-index:100;
     transform:translateX(100%);
     transform:${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
-
+    transition:transform 0.2s ease-in;
+    border-left:2px solid black;
     li{
         padding:20px 0px;
         margin-top:20px;
