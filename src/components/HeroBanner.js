@@ -20,7 +20,7 @@ function HeroBanner() {
 
                <Fade bottom>
                <ImageBox>
-                    <img src="/images/laptop-topshot.png" width={"400px"}height={"250px"} ></img>
+                    <img src="images/laptop-topshot.png" width={"400px"}height={"250px"} ></img>
                 </ImageBox>
                </Fade>
                 
